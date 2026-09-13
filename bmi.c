@@ -1,38 +1,54 @@
 #include <stdio.h>
+
 int main()
 {
-    float weight, height, bmi;
-    printf("Enter weight in kg and height in m: ");
-    scanf("%f %f", &weight, &height);
-    if(weight <= 0) 
+    float w, h, bmi;
+
+    printf("Enter weight in kilograms: ");
+    scanf("%f", &w);
+
+    printf("Enter height in metres: ");
+    scanf("%f", &h);
+
+    if (w <= 0)
     {
         printf("Invalid weight.\n");
     }
-   else if(height <= 0) 
+    else if (h <= 0)
     {
         printf("Invalid height.\n");
     }
-    else 
+    else
     {
-        bmi = weight / (height * height);
-        printf("BMI: %.2f\n", bmi); 
+        bmi = w / (h * h);
 
-}
-if (bmi < 18.5) 
-    {
-        printf("Underweight\n");
-    } 
-    else if (bmi >= 18.5 && bmi < 24.9) 
-    {
-        printf("Normal weight\n");
-    } 
-    else if (bmi >= 25 && bmi < 29.9) 
-    {
-        printf("Overweight\n");
-    } 
-    else 
-    {
-        printf("Obesity\n");
+        printf("BMI = %.2f\n", bmi);
+
+        if (bmi < 18.5)
+        {
+            printf("Category : Underweight\n");
+        }
+        else if (bmi < 25)
+        {
+            printf("Category : Normal\n");
+        }
+        else if (bmi < 30)
+        {
+            printf("Category : Overweight\n");
+        }
+        else if (bmi < 35)
+        {
+            printf("Category : Obesity Class I\n");
+        }
+        else if (bmi < 40)
+        {
+            printf("Category : Obesity Class II\n");
+        }
+        else
+        {
+            printf("Category : Obesity Class III\n");
+        }
     }
-return 0;
+
+    return 0;
 }
